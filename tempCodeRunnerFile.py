@@ -1,0 +1,2 @@
+board=entity()
+e=entity()
