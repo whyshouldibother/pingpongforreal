@@ -37,7 +37,6 @@ while run:
         if(tof()):e_x.flip()
         e.colour()
         board.colour()
-        print(e.color,board.color)
         score+=1
     if(e_y.val>=600):
         win.blit(gameover, (0,0))
