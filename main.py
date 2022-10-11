@@ -14,6 +14,8 @@ e_x=pos(0,1)
 e_width=e_height=10
 e_y=pos(0,20)
 gameover=pygame.image.load("gameover.png")
+Font=pygame.font.SysFont('CASKAYDIA COVE NERD FONT COMPLETE MONO', 48)
+score=0
 while run:
     if (right and x<=1205):
         x+=5
@@ -35,7 +37,7 @@ while run:
         if(tof()):e_x.flip()
         e.colour()
         board.colour()
-        print(e.color,board.color)
+        score+=1
     if(e_y.val>=600):
         win.blit(gameover, (0,0))
         pygame.display.update()
@@ -53,6 +55,8 @@ while run:
             if event.key==pygame.K_a:
                 left=False
     win.fill((0,0,0))
+    score_board=Font.render("Score>>{}".format(str(score)), 1,white)
+    win.blit(score_board,(1280-score_board.get_width(),0))
     pygame.draw.rect(win,e.color,(e_x.val,e_y.val,e_width,e_height))
     pygame.draw.rect(win, board.color, (x,580,75,15))
     pygame.display.update()
