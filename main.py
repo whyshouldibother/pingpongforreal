@@ -43,15 +43,15 @@ while run:
             score+=1
         if(e_y.val>=600):
             rec_score(score)
-            alive=False
             win.blit(gameover, (0,0))
-            pygame.display.update()
-        win.fill((0,0,0))
-        display_board="|Highscore->"+str(highscore())+"\\Score"+str(score)+"|"
-        score_board=Font.render(display_board, 1,white)
-        win.blit(score_board,(1280-score_board.get_width(),0))
-        pygame.draw.rect(win,e.color,(e_x.val,e_y.val,e_width,e_height))
-        pygame.draw.rect(win, board.color, (x,580,75,15))
+            alive=False
+        else:
+            win.fill((0,0,0))
+            display_board="|Highscore->"+str(highscore())+"\\Score"+str(score)+"|"
+            score_board=Font.render(display_board, 1,white)
+            win.blit(score_board,(1280-score_board.get_width(),0))
+            pygame.draw.rect(win,e.color,(e_x.val,e_y.val,e_width,e_height))
+            pygame.draw.rect(win, board.color, (x,580,75,15))
         pygame.display.update()
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
