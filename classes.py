@@ -16,3 +16,17 @@ class entity:
 def tof():
     random.seed(time.time())
     return random.choice([True,False])
+def rec_score(new_score):
+    score = open("score.dat", "a")
+    score.write(str(new_score)+"\n")
+    score.close()
+def highscore():
+    try:
+        score=open("score.dat","r")
+        high=0
+        for i in score:
+            if int(i)>high :
+                high=int(i)
+        return high
+    except:
+        return 0
