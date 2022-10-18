@@ -1,4 +1,3 @@
-from operator import truediv
 import pygame
 from classes import *
 pygame.init()
